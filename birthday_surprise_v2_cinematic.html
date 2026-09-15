@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Our Little Movie ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#050308;color:#fff;font-family:Montserrat,system-ui,sans-serif}
+button{font:inherit}.scene{position:absolute;inset:0;display:grid;place-items:center;opacity:0;visibility:hidden;transform:scale(1.08);transition:opacity 1.2s ease,transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.scene.active{opacity:1;visibility:visible;transform:scale(1)}
+.scene:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent 0 35%,#0009 100%)}
+.content{position:relative;z-index:4;width:min(850px,92vw);text-align:center;padding:30px}
+.kicker{text-transform:uppercase;letter-spacing:5px;font-size:10px;color:#eeb2c6}
+h1{font-size:clamp(48px,12vw,110px);line-height:.95;margin:15px 0;font-weight:800;letter-spacing:-4px}
+h2{font-size:clamp(34px,7vw,68px);line-height:1;margin:10px 0 25px}
+p{font-size:clamp(15px,3vw,19px);line-height:1.9;color:#f8eaf0}
+.cursive{font-family:Caveat,cursive}.btn{border:0;padding:15px 26px;border-radius:999px;color:#fff;background:linear-gradient(135deg,#ff3f7e,#ff91b4);font-weight:700;cursor:pointer;box-shadow:0 12px 40px #ff3f7e44;transition:.25s}.btn:hover{transform:translateY(-3px) scale(1.03)}
+.glow{position:absolute;width:55vw;height:55vw;border-radius:50%;filter:blur(80px);opacity:.22;background:#ff3f7e;animation:pulse 5s infinite alternate}@keyframes pulse{to{transform:scale(1.2);opacity:.35}}
+.noise{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.type{white-space:pre-line;min-height:170px}.film{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;opacity:.7}.film span{width:80px;height:105px;border:1px solid #ffffff1c;border-radius:8px;transform:rotate(var(--r));background:linear-gradient(145deg,#ffffff12,#ff5f9512);box-shadow:0 20px 40px #000}.film span:nth-child(1){--r:-12deg}.film span:nth-child(2){--r:5deg}.film span:nth-child(3){--r:-4deg}.film span:nth-child(4){--r:10deg}
+.memories{display:flex;justify-content:center;gap:15px;margin:25px 0;flex-wrap:wrap}.memory{width:125px;height:155px;border-radius:18px;background:linear-gradient(145deg,#ff5a91,#7b4c86);display:grid;place-items:center;font-size:42px;box-shadow:0 20px 50px #0008;animation:levitate 4s ease-in-out infinite}.memory:nth-child(2){animation-delay:.5s}.memory:nth-child(3){animation-delay:1s}@keyframes levitate{50%{transform:translateY(-15px) rotate(2deg)}}
+.dark{background:radial-gradient(circle at 50% 45%,#21101d,#050308 65%)}.luxury{font-size:11px;letter-spacing:3px;border:1px solid #ffffff22;padding:10px 14px;border-radius:99px;display:inline-block;color:#ffd4e2}
+.cards{max-width:440px;margin:25px auto;text-align:left}.cards div{margin:8px 0;padding:13px 16px;border-radius:13px;background:#ffffff09;border:1px solid #ffffff0d}
+.gift{width:230px;height:190px;position:relative;margin:25px auto;cursor:pointer;filter:drop-shadow(0 30px 35px #000)}.gift .base{position:absolute;bottom:0;left:5px;width:220px;height:125px;border-radius:12px;background:linear-gradient(135deg,#e92f68,#ff79a2)}.gift .lid{position:absolute;top:30px;left:0;width:230px;height:50px;border-radius:10px;background:#ff80a7;transform-origin:left bottom;transition:1s;z-index:3}.gift .ribbon{position:absolute;left:95px;top:0;width:40px;height:100%;background:#ffd5e466}.gift.open .lid{transform:rotate(-35deg) translate(-25px,-70px)}
+.present{display:none;animation:reveal 1s both}@keyframes reveal{from{opacity:0;transform:translateY(30px) scale(.8)}to{opacity:1;transform:none}}
+.present h2{font-size:34px}.terms{font-family:Caveat;font-size:29px;color:#ffc3d5}
+.stars{position:absolute;inset:0;overflow:hidden}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 2s infinite alternate}@keyframes twinkle{to{opacity:.15;transform:scale(2)}}
+#serious{background:radial-gradient(circle at 50% 45%,#321727,#07050a 70%)}.heartbig{font-size:55px;animation:heartbeat 1.5s infinite}@keyframes heartbeat{50%{transform:scale(1.18)}}
+.cake{width:250px;height:210px;position:relative;margin:0 auto 20px}.plate{position:absolute;bottom:5px;left:8px;width:235px;height:25px;border-radius:50%;background:#ffffff30}.layer{position:absolute;left:35px;width:180px;height:65px;border-radius:14px 14px 28px 28px;background:linear-gradient(#ff82a9,#d83269);box-shadow:inset 0 -9px #a9234d}.layer.a{bottom:27px}.layer.b{bottom:83px;left:48px;width:155px;background:linear-gradient(#ffb0c7,#ec5282)}.icing{position:absolute;left:35px;bottom:75px;width:180px;height:16px;border-radius:50%;background:#fff0f6}.candle{position:absolute;bottom:130px;width:13px;height:47px;background:#fff;border-radius:5px}.c1{left:92px}.c2{left:119px}.c3{left:146px}.flame{position:absolute;top:-18px;left:2px;width:10px;height:17px;border-radius:50%;background:#ffd34e;box-shadow:0 0 24px #ffc234;animation:flicker .15s infinite alternate}@keyframes flicker{to{transform:scale(.75) rotate(5deg)}}.off .flame{display:none}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}.piece{position:absolute;top:-20px;width:9px;height:15px;animation:drop 3s linear forwards}@keyframes drop{to{transform:translate3d(var(--x),110vh,0) rotate(900deg)}}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}.heart{position:absolute;bottom:-40px;animation:up linear forwards}@keyframes up{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+.nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:#ffffff35;transition:.4s}.dot.on{background:#ff6d9c;box-shadow:0 0 12px #ff6d9c}
+.music{position:fixed;right:16px;bottom:16px;z-index:50;width:44px;height:44px;border-radius:50%;border:1px solid #fff2;background:#ffffff12;color:#fff;cursor:pointer}
+@media(max-height:650px){.content{padding:18px}.memory{width:90px;height:110px}.type{min-height:120px}.cake{transform:scale(.8);margin-top:-10px;margin-bottom:-30px}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="hearts" id="hearts"></div><div class="confetti" id="confetti"></div>
+<div class="nav" id="nav"></div><button class="music" id="music">♪</button>
+
+<section class="scene active" id="s1"><div class="glow"></div><div class="noise"></div><div class="film"><span></span><span></span><span></span><span></span></div><div class="content">
+<div class="kicker">a message from someone who loves you</div>
+<h1 class="cursive">Hey… wait. 👀</h1><p>Don't scroll. Don't ask questions.<br><b>I made something for you.</b></p><button class="btn" onclick="go(2)">Press this very suspicious button 💗</button>
+</div></section>
+
+<section class="scene" id="s2"><div class="glow"></div><div class="content"><div class="kicker">scene one • today</div><h2>HAPPIEST<br>BIRTHDAYYYYYY 🎂❤️</h2><div class="memories"><div class="memory">🌷</div><div class="memory">💗</div><div class="memory">✨</div></div><p>To the sweetest girl in my world…<br><span class="cursive" style="font-size:31px">Today is your day.</span></p><button class="btn" onclick="go(3)">Keep going →</button></div></section>
+
+<section class="scene" id="s3"><div class="dark"></div><div class="content"><span class="luxury">PRIVATE • CONFIDENTIAL • $∞</span><h2 class="cursive" style="font-size:70px">A Little Message</h2><p id="t3" class="type"></p><button class="btn" onclick="go(4)">Now for something VERY important →</button></div></section>
+
+<section class="scene" id="s4"><div class="dark"></div><div class="content"><div class="kicker">TOP SECRET DELIVERY</div><h2>About Your Gift… 💀</h2><p>I prepared a <b>VERY expensive</b> gift.<br>I considered:</p><div class="cards"><div>❌ Car</div><div>❌ Diamond</div><div>❌ iPhone</div><div>❌ Private island</div></div><p class="cursive" style="font-size:34px">My bank account said: “Absolutely not.” 💀</p><button class="btn" onclick="go(5)">Reveal the luxury item 🎁</button></div></section>
+
+<section class="scene" id="s5"><div class="dark"></div><div class="content"><div class="kicker">YOUR PREMIUM DELIVERY</div><h2>Your Gift Is Ready 🎁</h2><div class="gift" id="gift" onclick="openGift()"><div class="lid"><div class="ribbon"></div></div><div class="base"><div class="ribbon" style="height:125px"></div></div></div><div id="present" class="present"><span class="luxury">CONGRATULATIONS! 🎉</span><h2>ONE FULL-TIME BOYFRIEND™</h2><p>❤️ Unlimited love<br>😂 Unlimited nonsense<br>🫂 Unlimited hugs<br>📞 Random calls<br>🥹 “I miss you” messages<br>😭 Occasional drama<br>🤡 Questionable jokes</p><p><b>Warranty:</b> Lifetime<br><b>Returns:</b> Absolutely not.<br><b>Replacement:</b> Not available.</p><div class="terms">Terms & Conditions:<br>You are stuck with me. ❤️</div><button class="btn" onclick="go(6)">Okay… enough nonsense →</button></div></div></section>
+
+<section class="scene" id="serious"><div class="stars" id="stars"></div><div class="content"><div class="heartbig">❤️</div><div class="kicker">scene five • no jokes</div><h2 class="cursive" style="font-size:72px">One Serious Thing.</h2><p id="t6" class="type"></p><button class="btn" onclick="go(7)">One final scene →</button></div></section>
+
+<section class="scene" id="s7"><div class="glow"></div><div class="content"><div class="kicker">the final surprise</div><div class="cake"><div class="plate"></div><div class="layer a"></div><div class="layer b"></div><div class="icing"></div><div class="candle c1"><div class="flame"></div></div><div class="candle c2"><div class="flame"></div></div><div class="candle c3"><div class="flame"></div></div></div><h2>Make a wish 🎂</h2><button class="btn" id="wish" onclick="wish()">Blow the candles ✨</button><div id="final" style="display:none"><h2 class="cursive" style="font-size:52px">Happy Birthday, my favourite person. ❤️</h2><p>I hope this year brings you everything your heart wants.<br>And if you ever forget how special you are…<br><b>I'll remind you.</b><br>Again. And again.<br>And probably annoy you while doing it. 😂❤️</p><p class="cursive" style="font-size:32px">I love you. 🫶</p><p class="cursive" style="font-size:28px">Psst… your actual gift is coming. 👀🎁</p></div></div></section>
+</div>
+<script>
+const scenes=[...document.querySelectorAll('.scene')],nav=document.getElementById('nav');
+for(let i=0;i<7;i++){let d=document.createElement('i');d.className='dot'+(i==0?' on':'');nav.appendChild(d)}
+function go(n){scenes.forEach((x,i)=>x.classList.toggle('active',i===n-1));[...nav.children].forEach((x,i)=>x.classList.toggle('on',i===n-1));if(n===3)type('t3',"I hope today reminds you of how loved you are.\\nYou're genuinely one of the sweetest people I've ever known.\\nAnd I'm really lucky that I get to call you mine. ❤️\\n\\nI hope you smile a lot today…\\nespecially because I worked very hard on this website. 😌\\nPlease appreciate my suffering. 😂");if(n===6)type('t6',"I may joke around a lot.\\nI may annoy you.\\nI may behave like a complete idiot sometimes. 😂\\n\\nBut my love for you is one thing I never joke about.\\nYou mean so much to me.\\nAnd I'm genuinely grateful for every memory we've made together. ❤️")}
+function type(id,text){let e=document.getElementById(id);e.textContent='';let i=0;let timer=setInterval(()=>{e.textContent=text.slice(0,i++).replaceAll('\\\\n','\\n');if(i>text.length)clearInterval(timer)},18)}
+function openGift(){let g=document.getElementById('gift');if(g.classList.contains('open'))return;g.classList.add('open');setTimeout(()=>{document.getElementById('present').style.display='block';blast(90)},750)}
+function blast(n){let c=document.getElementById('confetti');for(let i=0;i<n;i++){let p=document.createElement('i');p.className='piece';p.style.left=Math.random()*100+'%';p.style.setProperty('--x',(Math.random()*360-180)+'px');p.style.background=`hsl(${Math.random()*360},90%,75%)`;p.style.animationDelay=Math.random()*.5+'s';c.appendChild(p);setTimeout(()=>p.remove(),3600)}}
+function wish(){document.querySelectorAll('.candle').forEach(x=>x.classList.add('off'));document.getElementById('wish').style.display='none';document.getElementById('final').style.display='block';blast(220)}
+for(let i=0;i<90;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*2+'s';document.getElementById('stars').appendChild(s)}
+setInterval(()=>{let h=document.createElement('span');h.className='heart';h.textContent=['❤','💗','💕','✨'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'%';h.style.fontSize=(14+Math.random()*22)+'px';h.style.animationDuration=(4+Math.random()*5)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),9000)},550);
+let ac=null,timer=null,on=false;
+function music(){if(on){clearInterval(timer);on=false;document.getElementById('music').textContent='♪';return}ac=new(window.AudioContext||window.webkitAudioContext)();on=true;document.getElementById('music').textContent='♫';let notes=[261.63,329.63,392,329.63,293.66,349.23,440,349.23],k=0;timer=setInterval(()=>{let o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=notes[k++%notes.length];g.gain.setValueAtTime(.0001,ac.currentTime);g.gain.exponentialRampToValueAtTime(.022,ac.currentTime+.08);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.7);o.connect(g).connect(ac.destination);o.start();o.stop(ac.currentTime+.75)},700)}
+document.getElementById('music').onclick=music;
+</script>
+</body></html>
